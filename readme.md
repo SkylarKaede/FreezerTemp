@@ -31,7 +31,7 @@ if (temperatureF > 0) {
 ## Wiring Diagram
 A KiCad schematic is provided.
 
-see wiring diagram
+![Wiring Diagram](https://git.yandere.love/skylar/FreezerTemp/raw/branch/master/wiring%20diagram.png)
 
 ## Home Assistant Configuration
 An example sensor using the REST integration is provided in sensor.yaml and can be copied into your Home Assistant configuration.
