@@ -1,0 +1,14 @@
+# Home Assistant config to grab data from the arduino
+sensor:
+  - platform: rest
+    resource: http://1.2.3.4
+    name: "Freezer sensor"
+    timeout: 60
+    json_attributes:
+      - temperatureF
+  - platform: template
+    sensors:
+      freezer_temp:
+        friendly_name: "Freezer Temperature"
+        value_template: "{{ state_attr('sensor.freezer_sensor', 'temperatureF') }}"
+        unit_of_measurement: "°F"

@@ -1,0 +1,231 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Freezer Sensor"
+Date "2023-01-10"
+Rev "1"
+Comp "Sky's Feed & Seed"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Module:Arduino_UNO_R3 A1
+U 1 1 63BDAA65
+P 4400 3000
+F 0 "A1" H 4400 4181 50  0001 C CNN
+F 1 "Arduino_UNO_R3" H 4400 4089 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 4400 3000 50  0001 C CIN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 4400 3000 50  0001 C CNN
+	1    4400 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Sensor_Temperature:DS18B20 U1
+U 1 1 63BDF563
+P 8800 4250
+F 0 "U1" H 8570 4296 50  0000 R CNN
+F 1 "DS18B20" H 8570 4205 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7800 4000 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" H 8650 4500 50  0001 C CNN
+	1    8800 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 63BE29A5
+P 5500 1500
+F 0 "D1" H 5493 1717 50  0000 C CNN
+F 1 "LED" H 5493 1626 50  0000 C CNN
+F 2 "" H 5500 1500 50  0001 C CNN
+F 3 "~" H 5500 1500 50  0001 C CNN
+	1    5500 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 63BE424D
+P 5450 2400
+F 0 "SW1" H 5450 2685 50  0000 C CNN
+F 1 "Reset Switch" H 5450 2594 50  0000 C CNN
+F 2 "" H 5450 2600 50  0001 C CNN
+F 3 "~" H 5450 2600 50  0001 C CNN
+	1    5450 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:XLR3 J1
+U 1 1 63BE89C6
+P 8850 3100
+F 0 "J1" H 8850 3465 50  0000 C CNN
+F 1 "3 pin male" H 8850 3374 50  0000 C CNN
+F 2 "" H 8850 3100 50  0001 C CNN
+F 3 " ~" H 8850 3100 50  0001 C CNN
+	1    8850 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:XLR3 J1
+U 1 1 63BEA4E7
+P 6800 3100
+F 0 "J1" H 6800 3465 50  0000 C CNN
+F 1 "3 pin female" H 6800 3374 50  0000 C CNN
+F 2 "" H 6800 3100 50  0001 C CNN
+F 3 " ~" H 6800 3100 50  0001 C CNN
+	1    6800 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 63BEDEE3
+P 4300 1150
+F 0 "#PWR?" H 4300 1000 50  0001 C CNN
+F 1 "+5V" H 4315 1323 50  0000 C CNN
+F 2 "" H 4300 1150 50  0001 C CNN
+F 3 "" H 4300 1150 50  0001 C CNN
+	1    4300 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 63BEFABB
+P 4400 4750
+F 0 "#PWR?" H 4400 4500 50  0001 C CNN
+F 1 "GND" H 4405 4577 50  0000 C CNN
+F 2 "" H 4400 4750 50  0001 C CNN
+F 3 "" H 4400 4750 50  0001 C CNN
+	1    4400 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1150 4300 2000
+$Comp
+L Device:R R1
+U 1 1 63BF27BD
+P 6050 2500
+F 0 "R1" H 6120 2546 50  0000 L CNN
+F 1 "R" H 6120 2455 50  0000 L CNN
+F 2 "" V 5980 2500 50  0001 C CNN
+F 3 "~" H 6050 2500 50  0001 C CNN
+	1    6050 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4100 4400 4750
+Wire Wire Line
+	4500 2000 4500 1500
+Wire Wire Line
+	4500 1500 5350 1500
+Wire Wire Line
+	4600 2000 4600 1800
+Wire Wire Line
+	4600 1800 6050 1800
+Wire Wire Line
+	6050 1800 6050 2350
+Wire Wire Line
+	6500 3100 6500 1800
+Wire Wire Line
+	6500 1800 6050 1800
+Connection ~ 6050 1800
+Wire Wire Line
+	6800 3400 6050 3400
+Wire Wire Line
+	6050 3400 6050 2650
+Wire Wire Line
+	6050 3400 6050 4300
+Wire Wire Line
+	6050 4300 3500 4300
+Wire Wire Line
+	3500 2600 3900 2600
+Connection ~ 6050 3400
+Wire Wire Line
+	3500 2600 3500 4300
+Wire Wire Line
+	7100 3100 7100 4500
+Wire Wire Line
+	7100 4500 5800 4500
+Wire Wire Line
+	4500 4500 4500 4100
+Wire Wire Line
+	8800 3950 8800 3750
+Wire Wire Line
+	8800 3750 8550 3750
+Wire Wire Line
+	8550 3750 8550 3100
+Wire Wire Line
+	9150 3100 9400 3100
+Wire Wire Line
+	9400 3100 9400 4750
+Wire Wire Line
+	9400 4750 8800 4750
+Wire Wire Line
+	8800 4750 8800 4550
+Wire Wire Line
+	9100 4250 9100 3600
+Wire Wire Line
+	9100 3600 8850 3600
+Wire Wire Line
+	8850 3600 8850 3400
+Wire Wire Line
+	4900 2400 5250 2400
+Wire Wire Line
+	5650 2400 5650 4500
+Connection ~ 5650 4500
+Wire Wire Line
+	5650 4500 4500 4500
+Wire Wire Line
+	5650 1500 5800 1500
+Wire Wire Line
+	5800 1500 5800 4500
+Connection ~ 5800 4500
+Wire Wire Line
+	5800 4500 5650 4500
+$Comp
+L Connector_Generic:Conn_01x03 BZ1
+U 1 1 63C00A27
+P 2050 3000
+F 0 "BZ1" H 1968 3317 50  0000 C CNN
+F 1 "KS0018" H 1968 3226 50  0000 C CNN
+F 2 "" H 1968 3225 50  0001 C CNN
+F 3 "~" H 2050 3000 50  0001 C CNN
+	1    2050 3000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1800 2650 1800
+Wire Wire Line
+	2650 1800 2650 3000
+Wire Wire Line
+	2650 3000 2250 3000
+Connection ~ 4600 1800
+Wire Wire Line
+	2250 3100 2650 3100
+Wire Wire Line
+	2650 3100 2650 4500
+Wire Wire Line
+	2650 4500 4300 4500
+Wire Wire Line
+	4300 4500 4300 4100
+Wire Wire Line
+	2250 2900 3200 2900
+Wire Wire Line
+	3200 2900 3200 2700
+Wire Wire Line
+	3200 2700 3900 2700
+NoConn ~ 2650 2900
+NoConn ~ 3500 2700
+NoConn ~ 4500 1800
+NoConn ~ 4300 1800
+NoConn ~ 5800 1800
+NoConn ~ 5650 4300
+NoConn ~ 5800 4300
+NoConn ~ 4500 4300
+NoConn ~ 4400 4300
+NoConn ~ 4300 4300
+Text Notes 2050 850  0    50   ~ 0
+Power provided by PoE splitter ahead of Arduino Ethernet shield
+$EndSCHEMATC

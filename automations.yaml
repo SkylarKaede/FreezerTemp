@@ -1,0 +1,36 @@
+- id: 'freezeralarm1'
+  alias: Freezer temp alarm
+  description: 'Sends a notification if freezer temperature rises above 0F'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.freezer_temp
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    above: '0'
+  condition: []
+  action:
+  - service: notify.mobile_app_example
+    data:
+      message: Freezer is above 0F
+      title: Freezer temperature alarm
+  mode: single
+- id: 'freezeralarm2'
+  alias: Freezer temp sensor unavailable
+  description: 'Sends a notification if freezer temperature sensor is unavailable for >10 minutes'
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.freezer_sensor
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.mobile_app_example
+    data:
+      message: Freezer temp sensor is unavailable
+  mode: single
